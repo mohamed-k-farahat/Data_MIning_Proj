@@ -207,7 +207,7 @@ def customer_segmentation(df, df_analysis):
             st.warning("Please select at least one feature for clustering.")
             return
         
-        num_clusters = st.slider("Number of clusters:", 2, 10, 4)
+        num_clusters = st.slider("Number of clusters:", 2, 10, 5)
         
         # Scale the features
         scaler = StandardScaler()
