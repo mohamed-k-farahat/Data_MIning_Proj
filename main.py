@@ -1,6 +1,6 @@
 import streamlit as st
-from pages.capstone import show_capstone
-from pages.churn import show_churn
+from modules.capstone import show_capstone
+from modules.churn import show_churn
 
 # Set page configuration
 st.set_page_config(
