@@ -13,21 +13,47 @@ from sklearn.ensemble import RandomForestClassifier  # Example model
 def show_churn():
     st.title("Customer Churn Prediction Analysis")
     
-    # Create tabs for different sections with colors depending on the theme
+    # Create tabs for different sections with improved styling that works across environments
     st.markdown(
         """
         <style>
-        .stTabs [data-baseweb="tab"] {
-            background-color: #f0f0f0;
-            color: #333;
+        /* Fix for tab styling to ensure they're flushed with the page */
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 0px;
+            margin-left: -1rem;
+            margin-right: -1rem;
+            padding-left: 1rem;
         }
+        
+        .stTabs [data-baseweb="tab"] {
+            margin: 0px !important;
+            padding: 1rem 1rem;
+            background-color: transparent;
+            color: white !important; /* Force white text for visibility in dark mode */
+            font-weight: 500;
+        }
+        
         .stTabs [data-baseweb="tab"]:hover {
-            background-color: #e0e0e0;
+            background-color: rgba(255, 255, 255, 0.1); /* Lighter hover in dark mode */
+        }
+        
+        .stTabs [data-baseweb="tab-highlight"] {
+            background-color: rgba(255, 255, 255, 0.2); /* Visible highlight in dark mode */
+        }
+        
+        .stTabs [data-baseweb="tab"][aria-selected="true"] {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Ensure all text is visible in dark mode */
+        .stMarkdown, .stText, p, h1, h2, h3, h4, h5, h6, li, span {
+            color: white !important;
         }
         </style>
         """,
         unsafe_allow_html=True
     )
+    
     tabs = st.tabs(["Prediction Tool", "Model Insights", "What-If Analysis", "Retention Strategies"])
     
     # Load the model
