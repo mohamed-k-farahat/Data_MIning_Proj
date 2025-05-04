@@ -32,8 +32,8 @@ def apply_custom_styling():
         secondary_color = "#00956B"
         bg_color = "#F8FAFB"  # Lighter background for better contrast
         card_bg = "#FFFFFF"
-        text_color = "#333333"
-        secondary_text = "#666666"
+        text_color = "#333333"  # Darker text for light mode
+        secondary_text = "#555555"  # Darker secondary text for better visibility
         nav_bg = "#FFFFFF"
         border_color = "#E6E6E6"
         hover_color = "#00D68F"
